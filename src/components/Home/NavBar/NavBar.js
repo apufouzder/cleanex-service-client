@@ -18,7 +18,7 @@ const NavBar = () => {
                         <Nav.Link className="mr-4" style={{ color: 'black' }} to="/">Projects</Nav.Link>
                         <Nav.Link className="mr-4" style={{ color: 'black' }} to="/">Contact</Nav.Link>
                         <Nav.Link className="mr-4" style={{ color: 'black' }} as={Link} to="/dashboard">Admin</Nav.Link>
-                        <Nav.Link style={{ color: 'black' }} to="/login">Login</Nav.Link>
+                        <Nav.Link style={{ color: 'black' }} as={Link} to="/login">Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

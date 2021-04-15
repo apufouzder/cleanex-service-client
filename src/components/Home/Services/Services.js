@@ -32,7 +32,7 @@ const Services = () => {
     const [servicesData, setServicesData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3040/service')
+        fetch('http://localhost:3040/services')
             .then(res => res.json())
             .then(data => setServicesData(data))
     }, [])
@@ -48,7 +48,7 @@ const Services = () => {
                 <div className="d-flex justify-content-center">
                     <Row className="">
                         {
-                            servicesData.map(service => <ServicesDetail service={service} key={service.name} />)
+                            servicesData.map(service => <ServicesDetail service={service} key={service._id} />)
                         }
                     </Row>
                 </div>

@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,38 +9,60 @@ import AddService from "./components/AdminMenu/AddService/AddService";
 import ManageServices from "./components/AdminMenu/ManageServices/ManageServices";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
+import Login from "./components/Login/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import Booking from "./components/UserMenu/Booking/Booking";
+import BookingList from "./components/UserMenu/BookingList/BookingList";
+
+
+export const UserContext = createContext();
 
 function App() {
+  const [user, setUser] = useState({});
   return (
-    <Router>
-      <Switch>
+    <UserContext.Provider value={[user, setUser]}>
+      <Router>
+        <Switch>
 
-        <Route path="/home">
-          <Home />
-        </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
 
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
 
-        <Route path="/addService">
-          <AddService />
-        </Route>
+          <Route path="/addService">
+            <AddService />
+          </Route>
 
-        <Route path="/manage-services">
-          <ManageServices />
-        </Route>
+          <Route path="/manage-services">
+            <ManageServices />
+          </Route>
 
-        <Route exact path="/">
-          <Home />
-        </Route>
+          <PrivateRoute path="/booking/:_id">
+            <Booking />
+          </PrivateRoute>
 
-        <Route path="*">
-          <h1>page not found 404</h1>
-        </Route>
+          <PrivateRoute path="/bookingList">
+            <BookingList />
+          </PrivateRoute>
 
-      </Switch>
-    </Router>
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="*">
+            <h1>page not found 404</h1>
+          </Route>
+
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

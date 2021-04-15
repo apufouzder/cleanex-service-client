@@ -3,7 +3,6 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const FooterCol = (props) => {
-    console.log(props);
     return (
         <Col md={3}>
             <h5>{props.menuTitle}</h5>
