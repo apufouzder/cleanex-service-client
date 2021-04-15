@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
-import ManageServicesTable from '../ManageServicesTable/ManageServicesTable';
-import logo from '../../../images/home.png';
-import { UserContext } from '../../../App';
+import AllBookingListTable from '../AllBookingListTable/AllBookingListTable';
 
-const ManageServices = () => {
-    const [user, setUser] = useContext(UserContext);
-    const [servicesData, setServicesData] = useState([])
-    console.log(servicesData);
+const AllBookingList = () => {
+    const [allBooking, setAllBooking] = useState([])
+
     useEffect(() => {
-        fetch('http://localhost:3040/services')
+        fetch('http://localhost:3040/allBookings')
             .then(res => res.json())
-            .then(data => setServicesData(data))
+            .then(data => setAllBooking(data))
     }, [])
     return (
         <section>
@@ -30,8 +26,8 @@ const ManageServices = () => {
                             borderRadius: '10px'
                         }}>
 
-                        <h3>Manage Services</h3>
-                        <ManageServicesTable servicesData={servicesData} />
+                        <h3>All Booking List</h3>
+                        <AllBookingListTable allBooking={allBooking} />
                     </div>
                 </Col>
             </Row>
@@ -39,4 +35,4 @@ const ManageServices = () => {
     );
 };
 
-export default ManageServices;
+export default AllBookingList;

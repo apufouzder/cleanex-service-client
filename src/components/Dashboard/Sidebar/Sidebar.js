@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
+import logo from '../../../images/home.png';
 
 const Sidebar = () => {
+    const [user, setUser] = useContext(UserContext);
     return (
-        <div style={{ position: 'fixed', height: "100vh" }} className="sidebar py-5 px-4 d-flex flex-column justify-content-between">
-
+        <div style={{ position: 'fixed', height: "100vh" }} className="sidebar px-4 d-flex flex-column justify-content-between">
             <ul className="list-unstyled">
+                <Link to="/">
+                    <img className="my-4" style={{ height: '50px' }} src={logo} alt="" />
+                </Link>
+
                 <li className="mb-3">
-                    <Link to="/orderList" className="text-decoration-none">
+                    <Link to="/allBookings" className="text-decoration-none">
                         <span>Order List</span>
                     </Link>
                 </li>
@@ -42,7 +48,9 @@ const Sidebar = () => {
                         <span>Review</span>
                     </Link>
                 </li>
+                <button className="btn-done mt-5">{user.name}</button>
             </ul>
+
         </div>
     );
 };

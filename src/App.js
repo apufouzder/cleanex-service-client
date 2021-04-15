@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AddService from "./components/AdminMenu/AddService/AddService";
+import AllBookingList from "./components/AdminMenu/AllBookingList/AllBookingList";
 import ManageServices from "./components/AdminMenu/ManageServices/ManageServices";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
@@ -30,6 +31,10 @@ function App() {
 
           <PrivateRoute path="/dashboard">
             <Dashboard />
+          </PrivateRoute>
+
+          <PrivateRoute path="/allBookings">
+            <AllBookingList />
           </PrivateRoute>
 
           <Route path="/addService">

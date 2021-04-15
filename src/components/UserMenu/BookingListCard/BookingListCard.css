@@ -1,0 +1,16 @@
+.btn-done{
+    background: #cafcdf;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #05c95a;
+    float: right;
+}
+.btn-pending{
+    background: #fde6e6;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #f77676;
+    float: right;
+}

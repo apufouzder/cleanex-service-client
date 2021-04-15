@@ -43,12 +43,6 @@ const Booking = () => {
 
     return (
         <section>
-            <div className="ml-5">
-                <Link to="/">
-                    <img width="40px" src={logo} alt="" />
-                </Link>
-                <p>{user.name}</p>
-            </div>
             <Row>
                 <Col md={2}>
                     <Sidebar />

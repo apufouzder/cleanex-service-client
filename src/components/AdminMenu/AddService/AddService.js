@@ -44,9 +44,6 @@ const AddService = () => {
 
     return (
         <section>
-            <div className="ml-5">
-                <Link to="/"><h2>Hello</h2></Link>
-            </div>
             <Row>
                 <Col md={2}>
                     <Sidebar />
