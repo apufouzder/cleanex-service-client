@@ -1,0 +1,7 @@
+.footer-section li {
+    list-style: none;
+}
+.footer-section a {
+    text-decoration: none;
+    color: #6c757d;
+}

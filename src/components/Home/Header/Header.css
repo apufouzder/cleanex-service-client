@@ -1,0 +1,25 @@
+.header-container{
+    /* background: linear-gradient(#fceec8, #fff); */
+    background-image: url(../../../images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-brand{
+    color: #fbc831;
+}
+.text-brand2{
+    color: #06b36b;
+}
+.btn-style {
+    border: none;
+    background: linear-gradient(60deg, #06b36b, #50dba2);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 28px 0px 28px 0px;
+    box-shadow: 2px 3px 13px #60d1a1;
+    font-weight: 500;
+    transition: .4s;
+}
+.btn-style:hover{
+    border-radius: 25px 0px 25px 25px;
+}
