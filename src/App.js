@@ -4,6 +4,8 @@ import {
   Route
 } from "react-router-dom";
 import './App.css';
+import AddService from "./components/AdminMenu/AddService/AddService";
+import ManageServices from "./components/AdminMenu/ManageServices/ManageServices";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 
@@ -18,6 +20,14 @@ function App() {
 
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+
+        <Route path="/addService">
+          <AddService />
+        </Route>
+
+        <Route path="/manage-services">
+          <ManageServices />
         </Route>
 
         <Route exact path="/">

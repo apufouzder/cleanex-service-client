@@ -1,32 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import homeIcon from '../../../images/home.png';
 import windowIcon from '../../../images/windows.png';
 import sofaIcon from '../../../images/sofa.png';
 import { Container, Row } from 'react-bootstrap';
 import ServicesDetail from '../ServicesDetail/ServicesDetail';
 
-const servicesData = [
-    {
-        name: 'Commercial Cleaning',
-        img: homeIcon,
-        price: 50,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
-    },
-    {
-        name: 'Window Cleaning',
-        img: windowIcon,
-        price: 30,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
-    },
-    {
-        name: 'Sofa Cleaning',
-        img: sofaIcon,
-        price: 10,
-        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
-    }
-]
+// const servicesData = [
+//     {
+//         name: 'Commercial Cleaning',
+//         img: homeIcon,
+//         price: 50,
+//         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
+//     },
+//     {
+//         name: 'Window Cleaning',
+//         img: windowIcon,
+//         price: 30,
+//         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
+//     },
+//     {
+//         name: 'Sofa Cleaning',
+//         img: sofaIcon,
+//         price: 10,
+//         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur!'
+//     }
+// ]
+
+
 
 const Services = () => {
+    const [servicesData, setServicesData] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3040/service')
+            .then(res => res.json())
+            .then(data => setServicesData(data))
+    }, [])
+
     return (
         <section className="services py-3 mt-5">
             <Container>
