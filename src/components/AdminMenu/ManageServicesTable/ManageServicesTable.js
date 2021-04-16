@@ -1,6 +1,7 @@
 import React from 'react';
+import trash from '../../../icon/trash.png';
 
-const ManageServicesTable = ({ servicesData }) => {
+const ManageServicesTable = ({ servicesData, handleDelete }) => {
     return (
         <table className="table table-borderless">
             <thead style={{ background: '#f4f7fc' }}>
@@ -19,7 +20,7 @@ const ManageServicesTable = ({ servicesData }) => {
                             <td>{index + 1}</td>
                             <td>{service.title}</td>
                             <td>{service.price}</td>
-                            <td><button>Delete</button></td>
+                            <td><span style={{ cursor: 'pointer' }} onClick={() => handleDelete(service._id)}><img src={trash} alt="" /></span></td>
                         </tr>
                     )
                 }

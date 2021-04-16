@@ -14,6 +14,7 @@ import Login from "./components/Login/Login/Login";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import Booking from "./components/UserMenu/Booking/Booking";
 import BookingList from "./components/UserMenu/BookingList/BookingList";
+import Review from "./components/UserMenu/Review/Review";
 
 
 export const UserContext = createContext();
@@ -29,7 +30,7 @@ function App() {
             <Home />
           </Route>
 
-          <PrivateRoute path="/dashboard">
+          <PrivateRoute path="/makeAdmin">
             <Dashboard />
           </PrivateRoute>
 
@@ -51,6 +52,10 @@ function App() {
 
           <PrivateRoute path="/bookingList">
             <BookingList />
+          </PrivateRoute>
+
+          <PrivateRoute path="/review">
+            <Review />
           </PrivateRoute>
 
           <Route path="/login">

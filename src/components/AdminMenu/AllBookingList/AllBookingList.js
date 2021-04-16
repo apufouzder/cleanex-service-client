@@ -11,8 +11,9 @@ const AllBookingList = () => {
             .then(res => res.json())
             .then(data => setAllBooking(data))
     }, [])
+
     return (
-        <section>
+        <section style={{ overflow: 'hidden' }}>
             <Row>
                 <Col md={2}>
                     <Sidebar />

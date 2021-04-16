@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AllBookingListTable = ({ allBooking }) => {
-
     return (
         <table className="table table-borderless">
             <thead style={{ background: '#f4f7fc' }}>
@@ -21,7 +20,7 @@ const AllBookingListTable = ({ allBooking }) => {
                             <td>{booking.name}</td>
                             <td>{booking.email}</td>
                             <td>{booking.title}</td>
-                            <td>Credit Card</td>
+                            <td>{booking.cardInfo.brand}</td>
                             <td>pending</td>
                         </tr>
                     )

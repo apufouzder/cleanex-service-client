@@ -9,19 +9,34 @@ import { UserContext } from '../../../App';
 const ManageServices = () => {
     const [user, setUser] = useContext(UserContext);
     const [servicesData, setServicesData] = useState([])
-    console.log(servicesData);
+
     useEffect(() => {
         fetch('http://localhost:3040/services')
             .then(res => res.json())
             .then(data => setServicesData(data))
     }, [])
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3040/delete/${id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    const filterBookings = servicesData.filter(data => data._id !== id)
+                    setServicesData(filterBookings)
+                }
+            })
+    }
     return (
-        <section>
+        <section style={{ overflow: 'hidden' }}>
             <Row>
                 <Col md={2}>
                     <Sidebar />
                 </Col>
                 <Col md={10} style={{ background: '#f4f7fc', height: '100vh' }}>
+                    <h3 className="mt-4 ml-4">Manage <span className="text-brand2">Services</span></h3>
                     <div className="shadow-sm p-4 mt-5 mr-4"
                         style={{
                             background: 'white',
@@ -29,9 +44,7 @@ const ManageServices = () => {
                             padding: '17px',
                             borderRadius: '10px'
                         }}>
-
-                        <h3>Manage Services</h3>
-                        <ManageServicesTable servicesData={servicesData} />
+                        <ManageServicesTable servicesData={servicesData} handleDelete={handleDelete} />
                     </div>
                 </Col>
             </Row>

@@ -16,7 +16,7 @@ const BookingList = () => {
 
 
     return (
-        <section>
+        <section style={{ overflow: 'hidden' }}>
             <Row>
                 <Col md={2}>
                     <Sidebar />

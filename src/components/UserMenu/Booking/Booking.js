@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import ProcessPayment from '../../ProcessPayment/ProcessPayment/ProcessPayment';
-import logo from '../../../images/home.png';
+// import logo from '../../../images/home.png';
 
 const Booking = () => {
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
     const [service, setService] = useState([]);
-    const { title, price } = service;
     let { _id } = useParams();
-    console.log(service);
+
     useEffect(() => {
         fetch(`http://localhost:3040/service/${_id}`)
             .then(res => res.json())
@@ -20,13 +19,15 @@ const Booking = () => {
             })
     }, [_id])
 
-    const handlePayment = (event) => {
+    const handlePayment = (cardInfo, cardId) => {
         const bookingDetail = {
             ...user,
-            title: event.title,
+            cardInfo,
+            cardId,
+            title: service.title,
             description: service.description,
             imageURL: service.imageURL,
-            price: event.price,
+            price: service.price,
             bookingTime: new Date()
         }
 
@@ -42,7 +43,7 @@ const Booking = () => {
     }
 
     return (
-        <section>
+        <section style={{ overflow: 'hidden' }}>
             <Row>
                 <Col md={2}>
                     <Sidebar />

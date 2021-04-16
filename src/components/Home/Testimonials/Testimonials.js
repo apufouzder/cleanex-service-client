@@ -1,33 +1,16 @@
-import React from 'react';
-import wilson from '../../../images/wilson.png';
-import ema from '../../../images/ema.png';
-import aliza from '../../../images/aliza.png';
+import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Testimonial from '../Testimonial/Testimonial';
 
-const testimonialData = [
-    {
-        quote: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! consectetur adipisicing elit.',
-        name: 'Wilson Harry',
-        from: 'California',
-        img: wilson
-    },
-    {
-        quote: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! consectetur adipisicing elit.',
-        name: 'Ema Gomez',
-        from: 'California',
-        img: ema
-    },
-    {
-        quote: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore consectetur alias vel magnam ut deleniti! consectetur adipisicing elit.',
-        name: 'Aliza Farari',
-        from: 'California',
-        img: aliza
-    }
-]
-
-
 const Testimonials = () => {
+    const [testimonials, setTestimonials] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3040/review')
+            .then(res => res.json())
+            .then(data => setTestimonials(data))
+    }, [])
+
     return (
         <section className="py-5 my-5">
             <Container>
@@ -38,7 +21,7 @@ const Testimonials = () => {
                 <div>
                     <Row>
                         {
-                            testimonialData.map(testimonial => <Testimonial testimonial={testimonial} key={testimonial.name} />)
+                            testimonials.map(testimonial => <Testimonial testimonial={testimonial} key={testimonial._id} />)
                         }
                     </Row>
                 </div>

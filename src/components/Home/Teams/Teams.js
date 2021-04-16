@@ -7,7 +7,7 @@ const Teams = () => {
         <section className="py-5 mt-5">
             <Container>
                 <Row className="d-flex align-items-center">
-                    <Col md={5}>
+                    <Col md={5} className="mb-4">
                         <img src={teamImg} className="img-fluid" alt="teamImg" />
                     </Col>
                     <Col md={7}>
