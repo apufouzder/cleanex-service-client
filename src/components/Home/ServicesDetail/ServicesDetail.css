@@ -24,6 +24,20 @@
   border: none !important;
 }
 
+.imgHover figure img{
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.imgHover figure img:hover{
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+
+
 input:focus{
   box-shadow: 1px 1px 10px 0 rgb(98 120 223 / 50%) !important;
     border: 1px solid #06b36b !important;

@@ -28,9 +28,9 @@ const ServicesDetail = ({ service }) => {
                 onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
                 style={{ transform: props.xys.interpolate(trans) }}>
-                <div onClick={() => handleBooking(_id)} className="service p-4  rounded">
+                <div onClick={() => handleBooking(_id)} className="service p-4 imgHover rounded">
 
-                    <img style={{ height: '50px' }} src={imageURL} alt="" />
+                    <figure><img style={{ height: '50px' }} src={imageURL} alt="" /></figure>
                     <h5 className="my-4">{title}</h5>
                     <p className="text-secondary">{description}</p>
                     <h3>${price}</h3>
