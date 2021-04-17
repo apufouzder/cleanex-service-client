@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const FooterCol = (props) => {
     return (
-        <Col md={3}>
+        <Col lg={3} md={6} xs={12}>
             <h5>{props.menuTitle}</h5>
             <ul className="px-0">
                 {
-                    props.menuItem.map((item, index) => <li><Link className="" to={item.link}>{item.name}</Link></li>)
+                    props.menuItem.map(item => <li><Link style={{ lineHeight: '2' }} to={item.link}>{item.name}</Link></li>)
                 }
             </ul>
             {props.children && props.children}

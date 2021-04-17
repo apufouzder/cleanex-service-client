@@ -1,16 +1,14 @@
 import { useSpring } from '@react-spring/core';
 import { animated } from '@react-spring/web';
-import React, { useContext } from 'react';
 import { Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import { UserContext } from '../../../App';
+import './ServicesDetail.css';
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
+const calc = (x, y) => [-(y - window.innerHeight / 5) / 30, (x - window.innerWidth / 2) / 30, 1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 
 const ServicesDetail = ({ service }) => {
-    const [user, setUser] = useContext(UserContext);
     const { title, imageURL, description, price, _id } = service;
     const history = useHistory();
 
@@ -30,8 +28,8 @@ const ServicesDetail = ({ service }) => {
                 onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
                 style={{ transform: props.xys.interpolate(trans) }}>
-                <div onClick={() => handleBooking(_id)} style={{ background: 'white', cursor: 'pointer' }} className="service p-4 shadow rounded">
-                    <div class="overlay"></div>
+                <div onClick={() => handleBooking(_id)} className="service p-4  rounded">
+
                     <img style={{ height: '50px' }} src={imageURL} alt="" />
                     <h5 className="my-4">{title}</h5>
                     <p className="text-secondary">{description}</p>

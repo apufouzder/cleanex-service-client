@@ -5,3 +5,18 @@
     text-decoration: none;
     color: #6c757d;
 }
+
+@media (max-width: 576px) {
+    .custom-style{
+        text-align: center;
+    }
+  }
+@media (max-width: 768px) {
+    .custom-style{
+        text-align: center;
+    }
+    .subscribe{
+        margin: auto;
+        margin-left: 120px;
+    }
+  }

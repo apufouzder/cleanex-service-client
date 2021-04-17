@@ -1,13 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import ManageServicesTable from '../ManageServicesTable/ManageServicesTable';
-import logo from '../../../images/home.png';
-import { UserContext } from '../../../App';
 
 const ManageServices = () => {
-    const [user, setUser] = useContext(UserContext);
+    document.title = "CleaneX | Manage Services"
     const [servicesData, setServicesData] = useState([])
 
     useEffect(() => {

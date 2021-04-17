@@ -101,8 +101,8 @@ const SplitCardForm = ({ handlePayment, service }) => {
                     }
                 </div>
 
-                <button type="submit" disabled={!stripe}>
-                    Pay
+                <button className="btn-style" type="submit" disabled={!stripe}>
+                    Pay Now
                 </button>
             </form>
         </div>

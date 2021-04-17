@@ -22,7 +22,8 @@
     outline: none;
 }
 .btn-style:hover{
-    border-radius: 25px 0px 25px 25px;
+    transform: translateY(-2px);
+    background: linear-gradient(60deg, #1bb172, #11bb74);
 }
 .login-user{
     border: none;

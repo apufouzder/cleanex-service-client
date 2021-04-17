@@ -1,15 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import ProcessPayment from '../../ProcessPayment/ProcessPayment/ProcessPayment';
 // import logo from '../../../images/home.png';
 
 const Booking = () => {
+    document.title = "CleaneX | Booking"
     const [user] = useContext(UserContext);
     const [service, setService] = useState([]);
     let { _id } = useParams();
+    const history = useHistory();
 
     useEffect(() => {
         fetch(`http://localhost:3040/service/${_id}`)
@@ -21,6 +23,7 @@ const Booking = () => {
 
     const handlePayment = (cardInfo, cardId) => {
         const bookingDetail = {
+            status: 'pending',
             ...user,
             cardInfo,
             cardId,
@@ -30,6 +33,7 @@ const Booking = () => {
             price: service.price,
             bookingTime: new Date()
         }
+        console.log(bookingDetail);
 
         fetch('http://localhost:3040/addBooking', {
             method: 'POST',
@@ -38,7 +42,7 @@ const Booking = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('data', data);
+                data && history.replace('/bookingList')
             })
     }
 

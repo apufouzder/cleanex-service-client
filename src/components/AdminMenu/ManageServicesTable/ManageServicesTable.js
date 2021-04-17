@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import trash from '../../../icon/trash.png';
 
 const ManageServicesTable = ({ servicesData, handleDelete }) => {
@@ -13,8 +14,8 @@ const ManageServicesTable = ({ servicesData, handleDelete }) => {
                 </tr>
             </thead>
             <tbody>
-                {
-                    servicesData.map((service, index) =>
+                {servicesData.length > 0
+                    ? servicesData.map((service, index) =>
 
                         <tr>
                             <td>{index + 1}</td>
@@ -23,6 +24,7 @@ const ManageServicesTable = ({ servicesData, handleDelete }) => {
                             <td><span style={{ cursor: 'pointer' }} onClick={() => handleDelete(service._id)}><img src={trash} alt="" /></span></td>
                         </tr>
                     )
+                    : <Spinner animation="border" variant="success" />
                 }
             </tbody>
         </table>

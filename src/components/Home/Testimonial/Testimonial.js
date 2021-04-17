@@ -6,7 +6,7 @@ const Testimonial = (props) => {
 
     return (
         <Col md={4}>
-            <Card className="shadow-sm border-0">
+            <Card className="shadow-sm  mb-4">
                 <Card.Header className="border-0 bg-white d-flex align-items-center">
                     <img style={{ marginRight: '10px', borderRadius: '50%' }} width="60" src={img} alt="" />
                     <div>

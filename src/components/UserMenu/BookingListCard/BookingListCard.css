@@ -14,3 +14,11 @@
     color: #f77676;
     float: right;
 }
+.btn-onGoing{
+    background: #ffe6b7;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #ffb326;
+    float: right;
+}

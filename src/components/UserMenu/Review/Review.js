@@ -5,6 +5,7 @@ import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const Review = () => {
+    document.title = "CleaneX | Send Review"
     const [user] = useContext(UserContext);
     const { register, handleSubmit } = useForm();
 

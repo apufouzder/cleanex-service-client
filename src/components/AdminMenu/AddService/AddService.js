@@ -8,6 +8,7 @@ import UploadIcon from '../../../icon/upload.png';
 import './AddService.css';
 
 const AddService = () => {
+    document.title = "CleaneX | Add-Service"
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null);
 

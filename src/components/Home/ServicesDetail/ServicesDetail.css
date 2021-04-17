@@ -1,88 +1,36 @@
-.credentialing {
-    --bg-color: #B8F9D3;
-    --bg-color-light: #e2fced;
-    --text-color-hover: #4C5656;
-    --box-shadow-color: rgba(184, 249, 211, 0.48);
-  }
 
-
+.service{
+  transition: .4s ease-in-out;
+  cursor: pointer;
+}
 .service:hover {
-    transform: translateY(-5px) scale(1.005) translateZ(0);
-    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
-      0 24px 46px var(--box-shadow-color);
-  }
-  
-  .service:hover .overlay {
-    transform: scale(4) translateZ(0);
-  }
-  
-  .service:hover .circle {
-    border-color: var(--bg-color-light);
-    background: var(--bg-color);
-  }
-  
-  .service:hover .circle:after {
-    background: var(--bg-color-light);
-  }
-  
-  .service:hover p {
-    color: var(--text-color-hover);
-  }
-  
-  .service:active {
-    transform: scale(1) translateZ(0);
-    box-shadow: 0 15px 24px rgba(0,0,0,0.11),
-      0 15px 24px var(--box-shadow-color);
-  }
-  
-  .service p {
-    font-size: 17px;
-    color: #4C5656;
-    margin-top: 30px;
-    z-index: 1000;
-    transition: color 0.3s ease-out;
-  }
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  transform: translateY(-10px);
+  border: none;
+}
+.service h3{
+  transition: .4s ease-in-out;
+}
+.service h5{
+  transition: .2s ease-in-out;
+}
+.service:hover h3{
+  color: #06b36b;
+}
+.service:hover h5{
+  color: #06b36b;
+}
+.card{
+  border: none !important;
+}
 
-  .circle {
-    width: 131px;
-    height: 131px;
-    border-radius: 50%;
-    background: #fff;
-    border: 2px solid var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease-out;
-  }
-  
-  .circle:after {
-    content: "";
-    width: 118px;
-    height: 118px;
-    display: block;
-    position: absolute;
-    background: var(--bg-color);
-    border-radius: 50%;
-    top: 7px;
-    left: 7px;
-    transition: opacity 0.3s ease-out;
-  }
-  
-  .circle svg {
-    z-index: 10000;
-    transform: translateZ(0);
-  }
-  
-  .overlay {
-    width: 118px;
-    position: absolute; 
-    height: 118px;
-    border-radius: 50%;
-    background: var(--bg-color);
-    top: 70px;
-    left: 50px;
-    z-index: 0;
-    transition: transform 0.3s ease-out;
-  }
+input:focus{
+  box-shadow: 1px 1px 10px 0 rgb(98 120 223 / 50%) !important;
+    border: 1px solid #06b36b !important;
+    outline: none !important;
+}
+textarea:focus{
+  box-shadow: 1px 1px 10px 0 rgb(98 120 223 / 50%) !important;
+    border: 1px solid #06b36b !important;
+    outline: none !important;
+}

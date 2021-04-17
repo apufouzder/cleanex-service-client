@@ -13,6 +13,7 @@ if (firebase.apps.length === 0) {
 }
 
 const Login = () => {
+    document.title = "CleaneX | Login"
     const [user, setUser] = useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
     const history = useHistory();
