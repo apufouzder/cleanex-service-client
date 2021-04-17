@@ -34,7 +34,7 @@ const AddService = () => {
             description: data.description,
             imageURL: imageURL
         }
-        fetch('http://localhost:3040/addService', {
+        fetch('https://guarded-crag-91844.herokuapp.com/addService', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(serviceData)

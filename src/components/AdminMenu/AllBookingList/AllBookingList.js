@@ -8,7 +8,7 @@ const AllBookingList = () => {
     const [allBooking, setAllBooking] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3040/allBookings')
+        fetch('https://guarded-crag-91844.herokuapp.com/allBookings')
             .then(res => res.json())
             .then(data => setAllBooking(data))
     }, [])

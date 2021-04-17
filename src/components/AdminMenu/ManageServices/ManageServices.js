@@ -8,13 +8,13 @@ const ManageServices = () => {
     const [servicesData, setServicesData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3040/services')
+        fetch('https://guarded-crag-91844.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServicesData(data))
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3040/delete/${id}`, {
+        fetch(`https://guarded-crag-91844.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
         })

@@ -14,7 +14,7 @@ const Booking = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch(`http://localhost:3040/service/${_id}`)
+        fetch(`https://guarded-crag-91844.herokuapp.com/service/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setService(data[0])
@@ -35,7 +35,7 @@ const Booking = () => {
         }
         console.log(bookingDetail);
 
-        fetch('http://localhost:3040/addBooking', {
+        fetch('https://guarded-crag-91844.herokuapp.com/addBooking', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookingDetail)

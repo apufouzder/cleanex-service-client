@@ -6,7 +6,7 @@ const AllBookingListTable = ({ booking }) => {
 
     const handlerStatus = (e) => {
         setPending(!pending)
-        fetch('http://localhost:3040/updateStatus', {
+        fetch('https://guarded-crag-91844.herokuapp.com/updateStatus', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: e.target.value, id: booking._id })

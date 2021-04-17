@@ -10,7 +10,7 @@ const BookingList = () => {
     const [bookings, setBookings] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3040/bookings?email=` + user.email)
+        fetch(`https://guarded-crag-91844.herokuapp.com/bookings?email=` + user.email)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [user.email])
