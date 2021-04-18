@@ -7,6 +7,8 @@ import firebaseConfig from './firebase.config';
 import { Col, Container, Row } from 'react-bootstrap';
 import loginBg from '../../../images/team.png';
 import google from '../../../icon/google.png';
+import { Link } from 'react-router-dom';
+import logo from '../../../images/logo.png';
 
 if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
@@ -33,12 +35,17 @@ const Login = () => {
                 console.log(error.message);
             });
     }
+
     return (
         <Container>
             <Row className="align-items-center" style={{ height: "100vh" }}>
                 <Col md={6}>
-                    <div style={{ width: '500px', boxShadow: '0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%)' }} className="p-5 rounded">
-
+                    <div style={{ width: '500px', boxShadow: '0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%)' }} className="p-4 rounded">
+                        <div className="text-center">
+                            <Link to="/">
+                                <img className="mb-2" src={logo} alt="" />
+                            </Link>
+                        </div>
                         <h3 className="text-center mb-5">
                             {newUser ? 'Create an account' : 'Login'}
                         </h3>

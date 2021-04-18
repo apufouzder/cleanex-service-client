@@ -14,9 +14,6 @@ const ServicesDetail = ({ service }) => {
 
     const handleBooking = () => {
         history.push(`/booking/${_id}`)
-        // setUser({ ...user, service: props.service })
-        // console.log({ ...user, service: props.service });
-
     }
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
 

@@ -15,7 +15,7 @@ import './Sidebar.css';
 const Sidebar = () => {
     const [user] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
-    console.log('isAdmin', isAdmin);
+
     useEffect(() => {
         fetch('https://guarded-crag-91844.herokuapp.com/isAdmin', {
             method: 'POST',
@@ -92,9 +92,8 @@ const Sidebar = () => {
                 }
 
             </ul>
-            <div>
+            <div className="mb-3">
                 <img style={{ width: '34px', borderRadius: '50%' }} src={user.userImg} alt="" />
-
             </div>
         </div>
     );

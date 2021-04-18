@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import NotFound from "./components/NotFound/NotFound";
 import Booking from "./components/UserMenu/Booking/Booking";
 import BookingList from "./components/UserMenu/BookingList/BookingList";
 import Review from "./components/UserMenu/Review/Review";
@@ -72,7 +73,7 @@ function App() {
           </Route>
 
           <Route path="*">
-            <h1>page not found 404</h1>
+            <NotFound />
           </Route>
 
         </Switch>

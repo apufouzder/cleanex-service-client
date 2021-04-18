@@ -33,7 +33,6 @@ const Booking = () => {
             price: service.price,
             bookingTime: new Date()
         }
-        console.log(bookingDetail);
 
         fetch('https://guarded-crag-91844.herokuapp.com/addBooking', {
             method: 'POST',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
-const AllBookingListTable = ({ booking }) => {
+const AllBookingListTable = ({ booking, handleStatusChange }) => {
     const [pending, setPending] = useState(booking.status.toLowerCase() === 'pending')
 
     const handlerStatus = (e) => {
@@ -13,7 +13,7 @@ const AllBookingListTable = ({ booking }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('update status', data);
+                console.log(data);
             })
     }
     return (

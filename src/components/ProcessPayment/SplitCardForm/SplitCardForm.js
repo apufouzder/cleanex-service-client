@@ -6,8 +6,8 @@ import { UserContext } from '../../../App';
 
 
 const SplitCardForm = ({ handlePayment, service }) => {
-    const { register, handleSubmit, watch, errors } = useForm();
-    const [user, setUser] = useContext(UserContext);
+    const { register, handleSubmit } = useForm();
+    const [user] = useContext(UserContext);
     const [paymentError, setPaymentError] = useState(null)
     const [paymentSuccess, setPaymentSuccess] = useState(null)
 
@@ -36,8 +36,6 @@ const SplitCardForm = ({ handlePayment, service }) => {
         } else {
             setPaymentSuccess(paymentMethod);
             setPaymentError(null);
-            console.log('[PaymentMethod]', paymentMethod);
-            console.log('[PaymentMethod]', paymentMethod.card);
             if (paymentMethod) {
                 handlePayment(paymentMethod.card, paymentMethod.id);
             }

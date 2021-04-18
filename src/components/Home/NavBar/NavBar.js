@@ -26,7 +26,7 @@ const NavBar = () => {
                         <Nav.Link className="mr-4" style={{ color: 'black', fontSize: '19px' }} as={Link} to="/dashboard">Admin</Nav.Link>
 
                         {user.name || user.email ?
-                            <Nav.Link className="login-user" style={{ color: 'black' }} as={Link} to="/login">
+                            <Nav.Link className="login-user" style={{ color: 'black' }} as={Link} to="/">
                                 <img style={{ width: '34px', borderRadius: '50%' }} src={user.userImg} alt="" />
                             </Nav.Link>
                             : <Nav.Link className="btn-style" style={{ color: 'black', fontSize: '19px' }} as={Link} to="/login">Login</Nav.Link>

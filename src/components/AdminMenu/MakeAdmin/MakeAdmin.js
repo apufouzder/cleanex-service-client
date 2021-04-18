@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
         const addAdmin = {
